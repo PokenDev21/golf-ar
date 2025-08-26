@@ -11,7 +11,8 @@ config_version=5
 [application]
 
 config/name="GolfAR"
-run/main_scene="uid://ce643ays7e6la"
+
+run/main_scene="uid://diam3cla6tfiy"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -23,7 +24,17 @@ project/assembly_name="GolfAR"
 
 3d/default_gravity_vector=Vector3(0, -9.81, 0)
 3d/default_angular_damp=0.2
+[editor_plugins]
+enabled=PackedStringArray("res://addons/godot-xr-tools-master/godot-xr-tools-master/addons/godot-xr-tools/plugin.cfg")
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+
+[xr]
+
+openxr/enabled=true
+openxr/foveation_level=3
+openxr/foveation_dynamic=true
+shaders/enabled=true
