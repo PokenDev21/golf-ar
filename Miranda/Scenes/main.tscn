@@ -41,7 +41,7 @@ mesh = SubResource("CylinderMesh_cp0wm")
 transform = Transform3D(1, 0, 0, 0, 0.475716, 0.879599, 0, -0.879599, 0.475716, 0.033499, 1.28563, -0.0308189)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-22.8923, 0, 0, 0, 0.0801835, 0, 0, 0, -17.593, 0, 0, 0)
+transform = Transform3D(-22.7109, 0, -2.21047, 0, 0.0801835, 0, 2.8763, 0, -17.4536, 0, 0, 0)
 mesh = SubResource("BoxMesh_jykxn")
 
 [node name="Node" type="Node" parent="."]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfma26utxxd6w"]
+
+[sub_resource type="Environment" id="Environment_cp0wm"]
+background_mode = 2
+background_energy_multiplier = 5.72
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cp0wm"]
+
+[node name="XROrigin3D" type="XROrigin3D"]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+environment = SubResource("Environment_cp0wm")
+
+[node name="LeftHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LeftHand"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 0, 0)
+mesh = SubResource("CylinderMesh_cp0wm")
+
+[node name="RightHand" type="XRController3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightHand"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 0, 0)
+mesh = SubResource("CylinderMesh_cp0wm")
