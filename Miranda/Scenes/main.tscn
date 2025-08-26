@@ -1,10 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://diam3cla6tfiy"]
+[gd_scene load_steps=8 format=3 uid="uid://diam3cla6tfiy"]
 
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://main.gd" id="1_dfsk2"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
 [ext_resource type="Script" uid="uid://kb5rmnfuf76v" path="res://FPScounter.gd" id="3_i0c5u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jykxn"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dfsk2"]
+ground_bottom_color = Color(0.765877, 0.703862, 0.632814, 1)
+
+[sub_resource type="Sky" id="Sky_vbbo3"]
+sky_material = SubResource("ProceduralSkyMaterial_dfsk2")
+
+[sub_resource type="Environment" id="Environment_i0c5u"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_vbbo3")
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_dfsk2")
@@ -13,7 +24,7 @@ script = ExtResource("1_dfsk2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.472132, 0.025434)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.475716, 0.879599, 0, -0.879599, 0.475716, 0.033499, 1.28563, -0.0308189)
+transform = Transform3D(1, 0, 0, 0, -0.194611, 0.98088, 0, -0.98088, -0.194611, 0.033499, 1.28563, -0.0308189)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-22.7109, 0, -2.21047, 0, 0.0801835, 0, 2.8763, 0, -17.4536, 0, 0, 0)
@@ -21,3 +32,6 @@ mesh = SubResource("BoxMesh_jykxn")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("3_i0c5u")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_i0c5u")
