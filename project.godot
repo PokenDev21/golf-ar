@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="GolfAR"
+run/main_scene="uid://ce643ays7e6la"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="GolfAR"
+
+[physics]
+
+3d/default_gravity_vector=Vector3(0, -9.81, 0)
+3d/default_angular_damp=0.2
 
 [rendering]
 
