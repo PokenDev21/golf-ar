@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfma26utxxd6w"]
 
-[ext_resource type="PackedScene" uid="uid://qwj2lgxa1nci" path="res://David/scenes/Golfglubba.glb" id="1_idw81"]
+[ext_resource type="PackedScene" uid="uid://hvjurno2v4of" path="res://David/scenes/golfglubba.tscn" id="1_idw81"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cp0wm"]
 
@@ -15,13 +15,14 @@ tracker = &"left_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LeftHand"]
 transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 0, 0)
+visible = false
 mesh = SubResource("CylinderMesh_cp0wm")
 
 [node name="RightHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
-[node name="Golfglubba" parent="RightHand" instance=ExtResource("1_idw81")]
+[node name="Golfglubba2" parent="RightHand" instance=ExtResource("1_idw81")]
 transform = Transform3D(2.50234, 0, 0, 0, 0.341294, -2.47896, 0, 2.47896, 0.341294, -0.00910848, -0.0172956, -1.04307)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightHand"]

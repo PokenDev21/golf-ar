@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmvthh2sjaqme"]
+[gd_scene load_steps=3 format=3 uid="uid://cmvthh2sjaqme"]
 
-[ext_resource type="Script" uid="uid://bbanapa1ln1r" path="res://test_controller.gd" id="1_66s2f"]
 [ext_resource type="PackedScene" uid="uid://mwqqbfibqnhg" path="res://golf_assets/free_3d_golf_ball_model_with_pbr_texture.glb" id="2_0wkuo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0wkuo"]
@@ -16,7 +15,6 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.19423, 0)
 shape = SubResource("SphereShape3D_0wkuo")
 
 [node name="GolfBallPhysics" type="Node3D" parent="."]
-script = ExtResource("1_66s2f")
 
 [node name="golf_ball" parent="." instance=ExtResource("2_0wkuo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.395369, 0)

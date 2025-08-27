@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://diam3cla6tfiy"]
+[gd_scene load_steps=10 format=3 uid="uid://diam3cla6tfiy"]
 
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://main.gd" id="1_dfsk2"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
 [ext_resource type="Script" uid="uid://kb5rmnfuf76v" path="res://FPScounter.gd" id="3_i0c5u"]
+[ext_resource type="PackedScene" uid="uid://cmvthh2sjaqme" path="res://golf_ball.tscn" id="4_vbbo3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jykxn"]
 
@@ -17,11 +18,14 @@ background_mode = 2
 background_color = Color(1, 1, 1, 1)
 sky = SubResource("Sky_vbbo3")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vbbo3"]
+size = Vector3(11.6711, 0.119873, 11.4206)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_dfsk2")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_vbbo3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.472132, 0.025434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142534, 0.460954, 0.0308381)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.194611, 0.98088, 0, -0.98088, -0.194611, 0.033499, 1.28563, -0.0308189)
@@ -35,3 +39,12 @@ script = ExtResource("3_i0c5u")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i0c5u")
+
+[node name="GolfBall" parent="." instance=ExtResource("4_vbbo3")]
+transform = Transform3D(0.999997, -0.00238749, -0.000795875, 0.00238891, 0.999996, 0.00179065, 0.0007916, -0.00179254, 0.999998, -0.213644, 1.01856, -1.12433)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0656328, 0.0184916, -0.451167)
+shape = SubResource("BoxShape3D_vbbo3")
