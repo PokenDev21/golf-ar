@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://5gikrvbrnynr"]
+
+[ext_resource type="PackedScene" uid="uid://qwj2lgxa1nci" path="res://David/scenes/Golfglubba.glb" id="1_s1n58"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6kpan"]
+size = Vector3(0.0524292, 0.0118866, 0.0507202)
+
+[node name="Golfglubba" instance=ExtResource("1_s1n58")]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." index="3"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0172848, 0.039717, -0.010719)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D" index="0"]
+shape = SubResource("BoxShape3D_6kpan")
