@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://diam3cla6tfiy"]
+[gd_scene load_steps=7 format=3 uid="uid://diam3cla6tfiy"]
 
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://main.gd" id="1_dfsk2"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
@@ -6,17 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c64811sx7rdom" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jykxn"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dfsk2"]
-ground_bottom_color = Color(0.765877, 0.703862, 0.632814, 1)
-
-[sub_resource type="Sky" id="Sky_vbbo3"]
-sky_material = SubResource("ProceduralSkyMaterial_dfsk2")
-
-[sub_resource type="Environment" id="Environment_i0c5u"]
-background_mode = 2
-background_color = Color(1, 1, 1, 1)
-sky = SubResource("Sky_vbbo3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbbo3"]
 size = Vector3(11.6711, 0.119873, 11.4206)
@@ -36,11 +25,8 @@ mesh = SubResource("BoxMesh_jykxn")
 
 [node name="Node" type="Node" parent="."]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_i0c5u")
-
 [node name="GolfBall" parent="." instance=ExtResource("4_vbbo3")]
-transform = Transform3D(0.999997, -0.00238749, -0.000795875, 0.00238891, 0.999996, 0.00179065, 0.0007916, -0.00179254, 0.999998, -0.213644, 1.01856, -1.12433)
+transform = Transform3D(0.999997, -0.00238749, -0.000795875, 0.00238891, 0.999996, 0.00179065, 0.0007916, -0.00179254, 0.999998, -0.213644, 1.01856, -0.965227)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
