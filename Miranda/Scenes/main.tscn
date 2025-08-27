@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://diam3cla6tfiy"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_dfsk2"]
+[ext_resource type="Script" uid="uid://d241h0qatl771" path="res://main.gd" id="1_dfsk2"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
-[ext_resource type="Script" uid="uid://kb5rmnfuf76v" path="res://FPScounter.gd" id="3_i0c5u"]
 [ext_resource type="PackedScene" uid="uid://cmvthh2sjaqme" path="res://golf_ball.tscn" id="4_vbbo3"]
+[ext_resource type="PackedScene" uid="uid://c64811sx7rdom" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jykxn"]
 
@@ -35,7 +35,6 @@ transform = Transform3D(-22.7109, 0, -2.21047, 0, 0.0801835, 0, 2.8763, 0, -17.4
 mesh = SubResource("BoxMesh_jykxn")
 
 [node name="Node" type="Node" parent="."]
-script = ExtResource("3_i0c5u")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_i0c5u")
@@ -48,3 +47,5 @@ transform = Transform3D(0.999997, -0.00238749, -0.000795875, 0.00238891, 0.99999
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0656328, 0.0184916, -0.451167)
 shape = SubResource("BoxShape3D_vbbo3")
+
+[node name="CollisionTracker" parent="." instance=ExtResource("5_i0c5u")]

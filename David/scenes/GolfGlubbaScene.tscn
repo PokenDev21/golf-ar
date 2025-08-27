@@ -1,15 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://i4ccgrt56tmv"]
+[gd_scene load_steps=2 format=3 uid="uid://i4ccgrt56tmv"]
 
 [ext_resource type="PackedScene" uid="uid://qwj2lgxa1nci" path="res://David/scenes/Golfglubba.glb" id="1_moigc"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_3tv1d"]
-size = Vector3(0.0524292, 0.0118866, 0.0507202)
-
-[node name="GolfGlubbaScene" type="AnimatableBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_3tv1d")
+[node name="GolfGlubbaScene" type="Node3D"]
 
 [node name="Golfglubba" parent="." instance=ExtResource("1_moigc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013401, -0.0331026, 0.0105123)
+
+[node name="club_tracker" type="Marker3D" parent="."]

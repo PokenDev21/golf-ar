@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mwqqbfibqnhg" path="res://golf_assets/free_3d_golf_ball_model_with_pbr_texture.glb" id="2_0wkuo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0wkuo"]
+radius = 0.518919
 
 [node name="GolfBall" type="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.613834, 0)
@@ -13,6 +14,7 @@ angular_damp = 0.2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.19423, 0)
 shape = SubResource("SphereShape3D_0wkuo")
+debug_color = Color(0.666667, 0.313726, 1, 1)
 
 [node name="GolfBallPhysics" type="Node3D" parent="."]
 
