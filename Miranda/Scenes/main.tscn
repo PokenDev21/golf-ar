@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://diam3cla6tfiy"]
 
-[ext_resource type="Script" uid="uid://d241h0qatl771" path="res://main.gd" id="1_dfsk2"]
+[ext_resource type="Script" path="res://main.gd" id="1_dfsk2"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
 [ext_resource type="Script" uid="uid://kb5rmnfuf76v" path="res://FPScounter.gd" id="3_i0c5u"]
 [ext_resource type="PackedScene" uid="uid://cmvthh2sjaqme" path="res://golf_ball.tscn" id="4_vbbo3"]
