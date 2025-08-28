@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://hmm0xgiyfvek"
 path.s3tc="res://.godot/imported/landscape-3531355_1920.jpg-4a2cddc2573d091de128c2f6fbb5cc1c.s3tc.ctex"
+path.etc2="res://.godot/imported/landscape-3531355_1920.jpg-4a2cddc2573d091de128c2f6fbb5cc1c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Miranda/landscape-3531355_1920.jpg"
-dest_files=["res://.godot/imported/landscape-3531355_1920.jpg-4a2cddc2573d091de128c2f6fbb5cc1c.s3tc.ctex"]
+dest_files=["res://.godot/imported/landscape-3531355_1920.jpg-4a2cddc2573d091de128c2f6fbb5cc1c.s3tc.ctex", "res://.godot/imported/landscape-3531355_1920.jpg-4a2cddc2573d091de128c2f6fbb5cc1c.etc2.ctex"]
 
 [params]
 

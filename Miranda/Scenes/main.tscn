@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://diam3cla6tfiy"]
+[gd_scene load_steps=8 format=3 uid="uid://diam3cla6tfiy"]
 
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://main.gd" id="1_dfsk2"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
@@ -9,6 +9,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbbo3"]
 size = Vector3(11.6711, 0.119873, 11.4206)
+
+[sub_resource type="Environment" id="Environment_vbbo3"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_dfsk2")
@@ -35,3 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0656328, 0.0184916, -0.451
 shape = SubResource("BoxShape3D_vbbo3")
 
 [node name="CollisionTracker" parent="." instance=ExtResource("5_i0c5u")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vbbo3")
