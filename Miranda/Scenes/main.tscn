@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://main.gd" id="1_dfsk2"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
 [ext_resource type="PackedScene" uid="uid://cmvthh2sjaqme" path="res://golf_ball.tscn" id="4_vbbo3"]
-[ext_resource type="PackedScene" uid="uid://c64811sx7rdom" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
+[ext_resource type="PackedScene" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jykxn"]
 
