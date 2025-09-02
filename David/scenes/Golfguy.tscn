@@ -5,6 +5,7 @@
 [sub_resource type="CylinderMesh" id="CylinderMesh_cp0wm"]
 
 [node name="XROrigin3D" type="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.596863, 0)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.746882, 0.664957, 0, -0.664957, 0.746882, 0, 1.7, 0)
