@@ -7,7 +7,7 @@
 [node name="XROrigin3D" type="XROrigin3D"]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.746882, 0.664957, 0, -0.664957, 0.746882, 0, 1.7, 0)
+transform = Transform3D(1, 0, 0, 0, 0.746882, 0.664957, 0, -0.664957, 0.746882, 0, 1, 0)
 
 [node name="LeftHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -28,4 +28,4 @@ visible = false
 mesh = SubResource("CylinderMesh_cp0wm")
 
 [node name="GolfGlubbaScene" parent="RightHand" instance=ExtResource("1_idw81")]
-transform = Transform3D(1, 0, 0, 0, 0.122684, -0.992446, 0, 0.992446, 0.122684, 0, 0, -0.264008)
+transform = Transform3D(1.8, 0, 0, 0, 0.220831, -1.7864, 0, 1.7864, 0.220831, 0, -0.0446831, -0.563933)
