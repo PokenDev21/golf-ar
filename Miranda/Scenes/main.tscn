@@ -1,40 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://diam3cla6tfiy"]
+[gd_scene load_steps=7 format=3 uid="uid://diam3cla6tfiy"]
 
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://main.gd" id="1_dfsk2"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
 [ext_resource type="PackedScene" uid="uid://cmvthh2sjaqme" path="res://golf_ball.tscn" id="4_vbbo3"]
+[ext_resource type="PackedScene" uid="uid://bd45nfduxh08u" path="res://golfbanalvl1.tscn" id="5_dpujx"]
 [ext_resource type="PackedScene" uid="uid://c64811sx7rdom" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_jykxn"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vbbo3"]
-size = Vector3(11.6711, 0.119873, 11.4206)
 
 [sub_resource type="Environment" id="Environment_vbbo3"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_dfsk2")
 
+[node name="golfbana2_alex" parent="." instance=ExtResource("5_dpujx")]
+
 [node name="XROrigin3D" parent="." instance=ExtResource("2_vbbo3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, -0.2, 0.031)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 1.02787, 1.19881)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.194611, 0.98088, 0, -0.98088, -0.194611, 0.033499, 1.28563, -0.0308189)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-22.7109, 0, -2.21047, 0, 0.0801835, 0, 2.8763, 0, -17.4536, 0, 0, 0)
-mesh = SubResource("BoxMesh_jykxn")
-
 [node name="Node" type="Node" parent="."]
 
 [node name="GolfBall" parent="." instance=ExtResource("4_vbbo3")]
-transform = Transform3D(0.999997, -0.00238749, -0.000795875, 0.00238891, 0.999996, 0.00179065, 0.0007916, -0.00179254, 0.999998, 0.434882, 1.01856, -0.980876)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066, 0.018, -0.451)
-shape = SubResource("BoxShape3D_vbbo3")
+transform = Transform3D(0.999997, -0.00238749, -0.000795875, 0.00238891, 0.999996, 0.00179065, 0.0007916, -0.00179254, 0.999998, 0.976, 0.4, -0.086)
 
 [node name="CollisionTracker" parent="." instance=ExtResource("5_i0c5u")]
 

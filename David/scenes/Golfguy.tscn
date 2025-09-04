@@ -7,7 +7,7 @@
 [node name="XROrigin3D" type="XROrigin3D"]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.746882, 0.664957, 0, -0.664957, 0.746882, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 0.746882, 0.664957, 0, -0.664957, 0.746882, 0, 1.62179, -0.209376)
 
 [node name="LeftHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
@@ -19,7 +19,7 @@ visible = false
 mesh = SubResource("CylinderMesh_cp0wm")
 
 [node name="RightHand" type="XRController3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+transform = Transform3D(1, 0, 0, 0, 0.98174, 0.190226, 0, -0.190226, 0.98174, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightHand"]
