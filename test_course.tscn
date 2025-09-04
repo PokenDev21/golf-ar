@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://v4c1g372hy3p"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wigmc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wigmc"]
+size = Vector3(2, 0, 2)
+
+[node name="TestCourse" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999874, 0.0158644, 0, -0.0158644, 0.999874, 0, 0, 0)
+
+[node name="Green" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Green"]
+mesh = SubResource("PlaneMesh_wigmc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Green"]
+shape = SubResource("BoxShape3D_wigmc")
