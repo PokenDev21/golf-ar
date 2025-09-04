@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbg42mtn2n30t"]
+[gd_scene load_steps=2 format=3 uid="uid://dfqfb84p6alx7"]
 
 [sub_resource type="GDScript" id="GDScript_7dm0k"]
 script/source = "# game_manager.gd
