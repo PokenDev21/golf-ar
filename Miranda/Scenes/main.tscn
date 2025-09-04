@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://diam3cla6tfiy"]
 
-[ext_resource type="Script" uid="uid://d241h0qatl771" path="res://Miranda/Scenes/main.gd" id="1_i0c5u"]
+[ext_resource type="Script" path="res://Miranda/Scenes/main.gd" id="1_i0c5u"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
-[ext_resource type="PackedScene" uid="uid://cmvthh2sjaqme" path="res://Alex/golf_ball.tscn" id="4_vbbo3"]
-[ext_resource type="PackedScene" uid="uid://bd45nfduxh08u" path="res://Alex/golfbanalvl1.tscn" id="5_dpujx"]
-[ext_resource type="PackedScene" uid="uid://c64811sx7rdom" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
+[ext_resource type="PackedScene" path="res://Alex/golf_ball.tscn" id="4_vbbo3"]
+[ext_resource type="PackedScene" path="res://Alex/golfbanalvl1.tscn" id="5_dpujx"]
+[ext_resource type="PackedScene" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
 
 [sub_resource type="Environment" id="Environment_vbbo3"]
 
