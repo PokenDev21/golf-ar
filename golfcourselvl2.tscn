@@ -47,6 +47,10 @@ shape = SubResource("ConcavePolygonShape3D_6kfb8")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder_001/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_v7dyk")
 
+[node name="Hål" parent="." index="5"]
+transform = Transform3D(0.771353, 0, 0, 0, 0.277687, 0, 0, 0, 0.771353, 0.0860821, 0.8003, -16.806)
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Hål" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hål/StaticBody3D" index="0"]
