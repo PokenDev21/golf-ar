@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd45nfduxh08u"]
 
-[ext_resource type="PackedScene" uid="uid://dnwphtjay3ytd" path="res://golfbana2_alex.glb" id="1_otw7j"]
+[ext_resource type="PackedScene" uid="uid://ugwi0031abdw" path="res://Alex/golfbana2_alex.glb" id="1_otw7j"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_x7mml"]
 margin = 0.377
