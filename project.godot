@@ -23,6 +23,12 @@ project/assembly_name="GolfAR"
 
 enabled=PackedStringArray("res://addons/godot-xr-tools-master/godot-xr-tools-master/addons/godot-xr-tools/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://addons/godot-xr-tools-master/": "pink"
+}
+
 [physics]
 
 3d/default_gravity_vector=Vector3(0, -9.81, 0)
