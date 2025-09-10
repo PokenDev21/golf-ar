@@ -7,7 +7,7 @@ func _ready():
 	if xr_interface and xr_interface.is_initialized():
 		print("OpenXR initialized successfully")
 		
-		switch_to_ar()
+		#switch_to_ar()
 
 		# Turn off v-sync for better XR performance
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)

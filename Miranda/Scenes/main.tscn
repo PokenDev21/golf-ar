@@ -1,5 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://diam3cla6tfiy"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://main.gd" id="1_dfsk2"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
 [ext_resource type="PackedScene" uid="uid://cmvthh2sjaqme" path="res://golf_ball.tscn" id="4_vbbo3"]
@@ -11,6 +12,15 @@
 size = Vector3(11.6711, 0.119873, 11.4206)
 
 [sub_resource type="Environment" id="Environment_vbbo3"]
+=======
+[ext_resource type="Script" uid="uid://d241h0qatl771" path="res://Miranda/Scenes/main.gd" id="1_i0c5u"]
+[ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
+[ext_resource type="PackedScene" uid="uid://bfmvs20utnb7l" path="res://Alex/golf_ball.tscn" id="4_vbbo3"]
+[ext_resource type="PackedScene" uid="uid://bd45nfduxh08u" path="res://Alex/golfbanalvl1.tscn" id="5_dpujx"]
+[ext_resource type="PackedScene" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
+
+[sub_resource type="Environment" id="Environment_i0c5u"]
+>>>>>>> Stashed changes
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_dfsk2")
@@ -21,6 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142534, 0.460954, 0.03083
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.194611, 0.98088, 0, -0.98088, -0.194611, 0.033499, 1.28563, -0.0308189)
 
+<<<<<<< Updated upstream
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-22.7109, 0, -2.21047, 0, 0.0801835, 0, 2.8763, 0, -17.4536, 0, 0, 0)
 mesh = SubResource("BoxMesh_jykxn")
@@ -35,8 +46,25 @@ transform = Transform3D(0.999997, -0.00238749, -0.000795875, 0.00238891, 0.99999
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0656328, 0.0184916, -0.451167)
 shape = SubResource("BoxShape3D_vbbo3")
+=======
+[node name="GolfBall" parent="." groups=["golf_ball"] instance=ExtResource("4_vbbo3")]
+transform = Transform3D(0.999997, -0.00238749, -0.000795878, 0.00238891, 0.999996, 0.00179064, 0.0007916, -0.00179254, 0.999998, 0.00423431, 0.746745, -0.086)
+>>>>>>> Stashed changes
 
 [node name="CollisionTracker" parent="." instance=ExtResource("5_i0c5u")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+<<<<<<< Updated upstream
 environment = SubResource("Environment_vbbo3")
+=======
+environment = SubResource("Environment_i0c5u")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="golfbana2_alex" parent="StaticBody3D" instance=ExtResource("5_dpujx")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.541971, -0.0214406, 0)
+shape = SubResource("ConcavePolygonShape3D_i0c5u")
+>>>>>>> Stashed changes
