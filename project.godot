@@ -43,7 +43,10 @@ textures/vram_compression/import_etc2_astc=true
 [xr]
 
 openxr/enabled=true
+<<<<<<< HEAD
 openxr/reference_space=2
+=======
+>>>>>>> 55ffb5f2e94ba6e1a1ddf8bd7099db36aa1bd4b7
 openxr/environment_blend_mode=2
 openxr/foveation_level=3
 openxr/foveation_dynamic=true
