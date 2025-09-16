@@ -1,17 +1,21 @@
 extends XROrigin3D
 
+@onready var right_controller: XRController3D = $RightHand
+
 var golf_ball: Node3D = null
-const Y_OFFSET := 0    # about 30 cm above the ball
-const Z_OFFSET := 0.6 # just 5 cm back on Z, barely noticeable
+const Y_OFFSET := 0
+const Z_OFFSET := 0.6
 
 func _ready() -> void:
 	call_deferred("_find_golf_ball")
 
+func _process(delta: float) -> void:
+	# Use trigger press on right controller
+	if right_controller.is_button_pressed("trigger_click"):
+		teleport_to_ball()
+
 func _find_golf_ball() -> void:
-	# Try by group
 	golf_ball = get_tree().get_first_node_in_group("golf_ball")
-	
-	# If not found, try by name
 	if golf_ball == null:
 		golf_ball = get_tree().root.find_child("GolfBall", true, false)
 	
@@ -26,9 +30,8 @@ func teleport_to_ball() -> void:
 		return
 	
 	var target_pos = golf_ball.global_transform.origin
-	
-	# Apply small offsets 
 	target_pos.y += Y_OFFSET
 	target_pos.z += Z_OFFSET
 	
+	# Move the XR Origin
 	global_transform.origin = target_pos

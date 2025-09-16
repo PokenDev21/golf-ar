@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfma26utxxd6w"]
+[gd_scene load_steps=5 format=3 uid="uid://dfma26utxxd6w"]
 
+[ext_resource type="Script" uid="uid://d0msclur06265" path="res://David/scenes/Controllermanager.gd" id="1_hxrxh"]
 [ext_resource type="PackedScene" uid="uid://i4ccgrt56tmv" path="res://David/scenes/GolfGlubbaScene.tscn" id="1_idw81"]
+[ext_resource type="Script" uid="uid://d1da35mf6n04h" path="res://David/scenes/right_hand.gd" id="2_dxlna"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cp0wm"]
 
 [node name="XROrigin3D" type="XROrigin3D"]
+script = ExtResource("1_hxrxh")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.746882, 0.664957, 0, -0.664957, 0.746882, 0, 1.62179, -0.209376)
@@ -21,6 +24,7 @@ mesh = SubResource("CylinderMesh_cp0wm")
 [node name="RightHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.98174, 0.190226, 0, -0.190226, 0.98174, 0.5, 1, -0.5)
 tracker = &"right_hand"
+script = ExtResource("2_dxlna")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RightHand"]
 transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, 0.2, 0, -0.2, -8.74228e-09, 0, 0, 0)

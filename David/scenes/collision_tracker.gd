@@ -2,8 +2,8 @@ extends CharacterBody3D
 # Follows a Marker3D (or any Node3D) that is in the given group, e.g. "club_tracker".
 
 @export var tracker_group: String = "club_tracker"
-@export var max_speed: float = 12.0
-@export var max_accel: float = 100.0
+@export var max_speed: float = 10.0
+@export var max_accel: float = 50.0
 @export_range(0.0, 1.0) var rot_lerp: float = 0.25
 @export var debug_enabled: bool = true
 @export var use_direct_positioning: bool = false  # Skip physics, directly set position
@@ -199,31 +199,19 @@ func _periodic_search() -> void:
 			print("[TRACKER] ⚠ Giving up search after ", max_search_attempts, " attempts")
 
 func _physics_process(delta: float) -> void:
-	# Re-find if we lost the tracker
 	if tracker == null or !is_instance_valid(tracker) or !tracker.is_inside_tree():
-		if tracker != null and debug_enabled:
-			print("[TRACKER] Lost tracker: ", tracker.name if is_instance_valid(tracker) else "invalid")
-		
 		refind_cooldown -= delta
 		if refind_cooldown <= 0.0:
 			_find_best_tracker()
 			refind_cooldown = 0.25
 		return
-	
-	# Calculate distance for debugging
+
 	var to_target: Vector3 = tracker.global_transform.origin - global_transform.origin
-	var distance_to_target: float = to_target.length()
-	
-	# Debug: Print tracking info occasionally
-	if debug_enabled and int(Time.get_ticks_msec() / 1000.0) % 2 == 0 and Engine.get_physics_frames() % 60 == 0:
-		print("[TRACKER] Following: ", tracker.name, " | Distance: ", "%.2f" % distance_to_target)
-	
-	# --- Position follow ---
+
+	# Always interpolate position smoothly
 	if use_direct_positioning:
-		# Direct positioning (ignores physics)
-		global_transform.origin = tracker.global_transform.origin
+		global_transform.origin = global_transform.origin.lerp(tracker.global_transform.origin, 0.25)
 	else:
-		# Physics-based following (collision-friendly) - reuse to_target variable
 		var desired_vel: Vector3 = to_target / max(delta, 1e-4)
 		var dv: Vector3 = desired_vel - velocity
 		if dv.length() > max_accel:
@@ -232,12 +220,10 @@ func _physics_process(delta: float) -> void:
 		if velocity.length() > max_speed:
 			velocity = velocity.normalized() * max_speed
 		
-		# Apply gravity if enabled
 		if not disable_gravity:
 			velocity += get_gravity() * delta
 		
 		move_and_slide()
 	
-	# --- Soft orientation follow ---
 	var tgt_basis := tracker.global_transform.basis.orthonormalized()
 	global_transform.basis = global_transform.basis.slerp(tgt_basis, rot_lerp)

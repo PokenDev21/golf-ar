@@ -29,6 +29,13 @@ folder_colors={
 "res://addons/godot-xr-tools-master/": "pink"
 }
 
+[input]
+
+ResetLoc={
+"deadzone": 0.2,
+"events": []
+}
+
 [physics]
 
 3d/default_gravity_vector=Vector3(0, -9.81, 0)
