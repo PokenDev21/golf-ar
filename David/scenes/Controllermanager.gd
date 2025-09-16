@@ -2,7 +2,7 @@ extends XROrigin3D
 
 var golf_ball: Node3D = null
 const Y_OFFSET := 0    # about 30 cm above the ball
-const Z_OFFSET := 0.8  # just 5 cm back on Z, barely noticeable
+const Z_OFFSET := 0.6 # just 5 cm back on Z, barely noticeable
 
 func _ready() -> void:
 	call_deferred("_find_golf_ball")
