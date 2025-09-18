@@ -3,11 +3,12 @@
 [ext_resource type="Script" uid="uid://71cfhmg27u1n" path="res://David/scenes/collision_tracker.gd" id="1_1cx6m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_50fko"]
-size = Vector3(0.0524292, 0.0118866, 0.0507202)
+size = Vector3(0.0524292, 0.0666924, 0.0507202)
 
 [node name="CollisionTracker" type="CharacterBody3D"]
 script = ExtResource("1_1cx6m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000631333, 0)
 shape = SubResource("BoxShape3D_50fko")
 debug_color = Color(0, 0.65098, 0.0705882, 1)

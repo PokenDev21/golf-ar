@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GolfAR"
-run/main_scene="uid://diam3cla6tfiy"
+run/main_scene="uid://b55lmse37f65v"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -59,3 +59,4 @@ openxr/extensions/debug_message_types=15
 shaders/enabled=true
 openxr/extensions/meta/passthrough=true
 openxr/extensions/meta/color_space/starting_color_space=3
+<<<<<<<HEADopenxr/reference_space=2

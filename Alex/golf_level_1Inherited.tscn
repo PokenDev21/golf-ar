@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://542n58ohj1sb"]
+
+[ext_resource type="PackedScene" uid="uid://ceuv74c60bc86" path="res://Alex/GolfLevel1.glb" id="1_g2cjf"]
+
+[node name="GolfLevel1" instance=ExtResource("1_g2cjf")]

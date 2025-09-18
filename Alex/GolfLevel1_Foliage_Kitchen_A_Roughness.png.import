@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b4ojit3bbd0hv"
+path.s3tc="res://.godot/imported/GolfLevel1_Foliage_Kitchen_A_Roughness.png-ff790df0894857279ce04afdd3fa8885.s3tc.ctex"
+path.etc2="res://.godot/imported/GolfLevel1_Foliage_Kitchen_A_Roughness.png-ff790df0894857279ce04afdd3fa8885.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "48bd3e8cdb47ebb71b29491a28e4285c"
+}
+
+[deps]
+
+source_file="res://Alex/GolfLevel1_Foliage_Kitchen_A_Roughness.png"
+dest_files=["res://.godot/imported/GolfLevel1_Foliage_Kitchen_A_Roughness.png-ff790df0894857279ce04afdd3fa8885.s3tc.ctex", "res://.godot/imported/GolfLevel1_Foliage_Kitchen_A_Roughness.png-ff790df0894857279ce04afdd3fa8885.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

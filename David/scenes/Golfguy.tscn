@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0msclur06265" path="res://David/scenes/Controllermanager.gd" id="1_hxrxh"]
 [ext_resource type="PackedScene" uid="uid://i4ccgrt56tmv" path="res://David/scenes/GolfGlubbaScene.tscn" id="1_idw81"]
-[ext_resource type="Script" uid="uid://d1da35mf6n04h" path="res://David/scenes/right_hand.gd" id="2_dxlna"]
+[ext_resource type="Script" path="res://David/scenes/right_hand.gd" id="2_dxlna"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cp0wm"]
 
@@ -32,4 +32,4 @@ visible = false
 mesh = SubResource("CylinderMesh_cp0wm")
 
 [node name="GolfGlubbaScene" parent="RightHand" instance=ExtResource("1_idw81")]
-transform = Transform3D(1.8, 0, 0, 0, 0.220831, -1.7864, 0, 1.7864, 0.220831, 0, -0.0446831, -0.563933)
+transform = Transform3D(2.2, 0, 0, 0, -0.107583, -2.19737, 0, 2.19737, -0.107583, 0.02601, 0.181849, -0.863043)
