@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://df36phvlkh2sx"]
+
+[ext_resource type="PackedScene" uid="uid://baodq2v8fiwhy" path="res://StartScene/GolfStartScene.glb" id="1_dkdfc"]
+[ext_resource type="Material" uid="uid://c2gqvnvjsh7j4" path="res://StartScene/glas.tres" id="2_h3334"]
+[ext_resource type="Texture2D" uid="uid://bi1ygyo4lcmgb" path="res://StartScene/limpopo_golf_course_4k.exr" id="3_cbyn5"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xo2us"]
+panorama = ExtResource("3_cbyn5")
+
+[sub_resource type="Sky" id="Sky_npbun"]
+sky_material = SubResource("PanoramaSkyMaterial_xo2us")
+
+[sub_resource type="Environment" id="Environment_3ox00"]
+background_mode = 2
+sky = SubResource("Sky_npbun")
+
+[node name="GolfStartScene" instance=ExtResource("1_dkdfc")]
+
+[node name="Plane" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 7.99823, 3.80861, -7.51375)
+material_override = ExtResource("2_h3334")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="6"]
+environment = SubResource("Environment_3ox00")

@@ -1,14 +1,19 @@
 extends CharacterBody3D
-# Ghost club tracker for VR, applies soft impulse to balls
+# Ghost club tracker for VR, applies a single soft impulse per contact and registers strokes.
 
 @export var tracker_group: String = "club_tracker"
 @export var debug_enabled: bool = true
 @export var ball_collision_layer: int = 1
-@export var max_velocity_transfer: float = 10.0  # clamp ball impulse
+@export var max_velocity_transfer: float = 10.0  # max impulse magnitude
 
 var tracker: Node3D = null
 var last_position: Vector3 = Vector3.ZERO
 var club_velocity: Vector3 = Vector3.ZERO
+
+# tracking which balls we've already applied an impulse to while overlapping
+var _hit_flags: Dictionary = {} # key: instance_id (int) -> bool
+# helper to map instance_id -> RigidBody3D (so we can clear flags cleanly)
+var _current_overlaps: Dictionary = {} # key: instance_id (int) -> RigidBody3D
 
 func _ready() -> void:
 	call_deferred("_find_tracker")
@@ -35,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	club_velocity = (current_pos - last_position) / max(delta, 0.001)
 	last_position = current_pos
 
-	# Teleport the tracker collider to controller
+	# Move the tracker collider to the controller
 	global_transform.origin = current_pos
 	global_transform.basis = tracker.global_transform.basis
 
@@ -51,17 +56,45 @@ func _physics_process(delta: float) -> void:
 	query.collide_with_bodies = true
 
 	var results: Array = space_state.intersect_shape(query, 32)
-	for raw_result in results:
-		var result: Dictionary = raw_result
-		var ball: RigidBody3D = result.get("collider") as RigidBody3D
-		if ball != null:
-			var collider_id: int = ball.get_instance_id()
 
+	# Build new overlap list for this frame
+	var new_overlap_ids: Array = []
+
+	for raw_result in results:
+		var result: Dictionary = raw_result as Dictionary
+		var ball: RigidBody3D = result.get("collider") as RigidBody3D
+		if ball == null:
+			continue
+
+		var iid: int = ball.get_instance_id()
+		new_overlap_ids.append(iid)
+		_current_overlaps[iid] = ball
+
+		# If we haven't already hit this ball during this overlap, apply a single impulse
+		if not _hit_flags.has(iid) or _hit_flags[iid] == false:
+			# compute impulse (simple transfer; tune if you want)
 			var impulse: Vector3 = club_velocity * ball.mass
+			# clamp magnitude
 			if impulse.length() > max_velocity_transfer:
 				impulse = impulse.normalized() * max_velocity_transfer
 
+			# apply impulse once
 			ball.apply_central_impulse(impulse)
 
+			# register stroke on the ball if it supports it
+			if ball.has_method("register_stroke"):
+				ball.register_stroke()
+
+			_hit_flags[iid] = true
+
 			if debug_enabled:
-				print("[TRACKER] Applied impulse to ball: ", ball.name, " id=", collider_id, " -> ", impulse)
+				print("[TRACKER] Hit ball:", ball.name, " id=", iid, " impulse=", impulse)
+
+	# Clear flags for balls that are no longer overlapping so they can be hit again later
+	var to_remove: Array = []
+	for key in _hit_flags.keys():
+		if not new_overlap_ids.has(key):
+			to_remove.append(key)
+	for key in to_remove:
+		_hit_flags.erase(key)
+		_current_overlaps.erase(key)
