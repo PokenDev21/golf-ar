@@ -1,0 +1,13 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://bml4ufuleoi4f"]
+
+[ext_resource type="Texture2D" uid="uid://bi1ygyo4lcmgb" path="res://StartScene/limpopo_golf_course_4k.exr" id="1_y141g"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xo2us"]
+panorama = ExtResource("1_y141g")
+
+[sub_resource type="Sky" id="Sky_npbun"]
+sky_material = SubResource("PanoramaSkyMaterial_xo2us")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_npbun")
