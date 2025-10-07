@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="GolfAR"
-run/main_scene="uid://df36phvlkh2sx"
+run/main_scene="uid://b55lmse37f65v"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+XRToolsRumbleManager="*res://addons/godot-xr-tools/rumble/rumble_manager.gd"
 
 [dotnet]
 
@@ -58,8 +63,6 @@ ResetLoc={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 
 [xr]

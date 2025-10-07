@@ -74,6 +74,10 @@ func _physics_process(delta: float) -> void:
 		if not _hit_flags.has(iid) or _hit_flags[iid] == false:
 			# compute impulse (simple transfer; tune if you want)
 			var impulse: Vector3 = club_velocity * ball.mass
+			
+			# zero out vertical component so impulse only affects XZ
+			impulse.y = 0.0
+
 			# clamp magnitude
 			if impulse.length() > max_velocity_transfer:
 				impulse = impulse.normalized() * max_velocity_transfer

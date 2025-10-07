@@ -53,7 +53,7 @@ func switch_to_ar() -> bool:
 
 	environment.background_mode = Environment.BG_COLOR
 	environment.background_color = Color(0.0, 0.0, 0.0, 0.0)
-	environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
+	#environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
 	return true
 
 func switch_to_vr() -> bool:
@@ -67,5 +67,5 @@ func switch_to_vr() -> bool:
 
 	viewport.transparent_bg = false
 	environment.background_mode = Environment.BG_SKY
-	environment.ambient_light_source = Environment.AMBIENT_SOURCE_BG
+	#environment.ambient_light_source = Environment.AMBIENT_SOURCE_BG
 	return true

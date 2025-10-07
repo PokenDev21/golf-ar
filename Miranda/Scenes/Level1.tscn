@@ -1,19 +1,16 @@
-[gd_scene load_steps=14 format=3 uid="uid://b55lmse37f65v"]
+[gd_scene load_steps=13 format=3 uid="uid://b55lmse37f65v"]
 
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://Miranda/Scenes/main.gd" id="1_e71bh"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_8rlfq"]
 [ext_resource type="PackedScene" uid="uid://cmvthh2sjaqme" path="res://Alex/golf_ball.tscn" id="3_eq7ty"]
 [ext_resource type="Script" uid="uid://dp5scwbh3jgiv" path="res://golfballresetpos.gd" id="4_s6q5h"]
 [ext_resource type="PackedScene" uid="uid://c64811sx7rdom" path="res://David/scenes/CollisionTracker.tscn" id="5_a2ln5"]
-[ext_resource type="PackedScene" uid="uid://ceuv74c60bc86" path="res://Alex/GolfLevel1.glb" id="6_8rlfq"]
+[ext_resource type="PackedScene" uid="uid://542n58ohj1sb" path="res://Alex/golf_level_1Inherited.tscn" id="6_a2ln5"]
 [ext_resource type="PackedScene" uid="uid://b7h6enp4r32i8" path="res://controlmenu.tscn" id="7_eq7ty"]
 [ext_resource type="Script" uid="uid://c7kfddq72uiav" path="res://Miranda/Scenes/hole.gd" id="8_s6q5h"]
 [ext_resource type="Script" uid="uid://mcvo1263srd4" path="res://Miranda/Scenes/gamemanager.gd" id="9_a2ln5"]
 
 [sub_resource type="Environment" id="Environment_vbbo3"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a2ln5"]
-points = PackedVector3Array(5.62132, 0.215374, 5.4118, -6.27302, -0.156325, -1.09293, -6.27302, -0.156325, 1.13814, -6.27302, 0.215374, -1.09293, 5.62132, -0.156325, -1.09293, 5.62132, 0.215374, -1.09293, 5.62132, -0.156325, 5.4118, -6.27302, 0.215374, 1.13814, 3.57567, 0.215374, 5.4118, 3.57567, -0.156325, 5.4118)
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2ln5"]
 
@@ -39,12 +36,8 @@ environment = SubResource("Environment_vbbo3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51393, -0.00337616, 0.0314999)
-shape = SubResource("ConvexPolygonShape3D_a2ln5")
-
-[node name="GolfLevel1" parent="StaticBody3D" instance=ExtResource("6_8rlfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.649, 0, -0.138)
+[node name="GolfLevel1" parent="StaticBody3D" instance=ExtResource("6_a2ln5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.85817, 0, 0.46271)
 
 [node name="Scoremenu" parent="." instance=ExtResource("7_eq7ty")]
 
@@ -71,3 +64,7 @@ shape = SubResource("CylinderShape3D_eq7ty")
 
 [node name="Gamemanager" type="Node" parent="."]
 script = ExtResource("9_a2ln5")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43222, -0.0553564)
+target_position = Vector3(0, -0.09, 0)
