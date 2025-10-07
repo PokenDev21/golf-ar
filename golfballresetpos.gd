@@ -11,7 +11,7 @@ const BALL_MASS := 0.046
 const LINEAR_DAMP := 0.0
 const ANGULAR_DAMP := 0.0
 const BOUNCE := 0.7
-const FRICTION := 250
+const FRICTION := 150
 
 # Stroke tracking
 var strokes: int = 0
