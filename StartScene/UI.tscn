@@ -1,23 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://n2i65061uvvm"]
+[gd_scene load_steps=4 format=3 uid="uid://n2i65061uvvm"]
 
-[ext_resource type="Texture2D" uid="uid://chrfd68l63r3x" path="res://StartScene/Skärmbild 2025-10-07 101134.jpg" id="1_gjrry"]
 [ext_resource type="Script" uid="uid://bbt1gryllpixu" path="res://StartScene/MainMenu.gd" id="1_pxed6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8obr"]
 bg_color = Color(0.392157, 0.541176, 0.231373, 0.588235)
 
 [sub_resource type="Theme" id="Theme_n8obr"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjrry"]
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="Theme" id="Theme_pxed6"]
-Button/styles/normal = SubResource("StyleBoxFlat_gjrry")
-
-[sub_resource type="Theme" id="Theme_4scuh"]
 
 [node name="Ui" type="CanvasLayer"]
 
@@ -101,167 +89,34 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_n8obr")
 
-[node name="BoxContainer" type="BoxContainer" parent="Menus/Levels"]
-z_index = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="Menus/Levels"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -406.0
+offset_top = -191.0
+offset_right = 406.0
+offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
 alignment = 1
 script = ExtResource("1_pxed6")
 
-[node name="Level1" type="Button" parent="Menus/Levels/BoxContainer"]
-clip_children = 1
-z_index = 2
-custom_minimum_size = Vector2(250, 250)
+[node name="Level1" type="Button" parent="Menus/Levels/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource("Theme_pxed6")
-
-[node name="Skärmbild2025-10-07101134" type="Sprite2D" parent="Menus/Levels/BoxContainer/Level1"]
-position = Vector2(133, 128)
-scale = Vector2(0.537109, 0.537109)
-texture = ExtResource("1_gjrry")
-
-[node name="Panel" type="Panel" parent="Menus/Levels/BoxContainer/Level1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_right = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_4scuh")
-
-[node name="Panel" type="Panel" parent="Menus/Levels/BoxContainer/Level1/Panel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -66.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="Menus/Levels/BoxContainer/Level1/Panel/Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -66.0
-offset_top = -62.0
-offset_right = 67.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 64
 text = "Level 1"
 
-[node name="Level2" type="Button" parent="Menus/Levels/BoxContainer"]
-clip_children = 1
-z_index = 2
-custom_minimum_size = Vector2(250, 250)
+[node name="Level2" type="Button" parent="Menus/Levels/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource("Theme_pxed6")
-
-[node name="Skärmbild2025-10-07101134" type="Sprite2D" parent="Menus/Levels/BoxContainer/Level2"]
-position = Vector2(133, 128)
-scale = Vector2(0.537109, 0.537109)
-texture = ExtResource("1_gjrry")
-
-[node name="Panel" type="Panel" parent="Menus/Levels/BoxContainer/Level2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_right = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_4scuh")
-
-[node name="Panel" type="Panel" parent="Menus/Levels/BoxContainer/Level2/Panel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -66.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="Menus/Levels/BoxContainer/Level2/Panel/Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -66.0
-offset_top = -62.0
-offset_right = 67.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 64
 text = "Level 2"
 
-[node name="Level3" type="Button" parent="Menus/Levels/BoxContainer"]
-clip_children = 1
-z_index = 2
-custom_minimum_size = Vector2(250, 250)
+[node name="Level3" type="Button" parent="Menus/Levels/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = SubResource("Theme_pxed6")
-
-[node name="Skärmbild2025-10-07101134" type="Sprite2D" parent="Menus/Levels/BoxContainer/Level3"]
-position = Vector2(133, 128)
-scale = Vector2(0.537109, 0.537109)
-texture = ExtResource("1_gjrry")
-
-[node name="Panel" type="Panel" parent="Menus/Levels/BoxContainer/Level3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -2.0
-offset_right = -2.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_4scuh")
-
-[node name="Panel" type="Panel" parent="Menus/Levels/BoxContainer/Level3/Panel"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -66.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="Menus/Levels/BoxContainer/Level3/Panel/Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -66.0
-offset_top = -62.0
-offset_right = 67.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 40
-text = "Level 3"
+theme_override_font_sizes/font_size = 64
+text = "Level 3
+"

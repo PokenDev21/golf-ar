@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckwn48fvg74lg"]
-
-[ext_resource type="PackedScene" uid="uid://c3c2jb3f6ndm" path="res://miranda_golfbana/rymdenbana 1 1.glb" id="1_0ygig"]
-
-[node name="rymdenbana 1 1" instance=ExtResource("1_0ygig")]

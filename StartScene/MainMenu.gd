@@ -1,13 +1,12 @@
-extends BoxContainer
+extends HBoxContainer
 
 func _ready():
-	# Connect all button children to one handler
+	# Connect all buttons to handler
 	for child in get_children():
 		if child is Button:
-			print("Level pressed")
 			child.pressed.connect(_on_level_button_pressed.bind(child.name))
 
-	# Optional: show last result if you have a label named "LastResultLabel"
+	# Optional: show last result
 	if has_node("LastResultLabel"):
 		var r = Game.last_result
 		var label = $LastResultLabel
@@ -18,3 +17,4 @@ func _ready():
 
 func _on_level_button_pressed(level_name):
 	Game.start_level(level_name)
+	print("Level pressed:", level_name)
