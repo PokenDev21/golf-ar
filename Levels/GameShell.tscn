@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b55lmse37f65v"]
+[gd_scene load_steps=10 format=3 uid="uid://b55lmse37f65v"]
 
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://Miranda/Scenes/main.gd" id="1_eag67"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_x6oih"]
@@ -6,14 +6,11 @@
 [ext_resource type="Script" uid="uid://dp5scwbh3jgiv" path="res://golfballresetpos.gd" id="4_hfnwn"]
 [ext_resource type="PackedScene" uid="uid://c64811sx7rdom" path="res://David/scenes/CollisionTracker.tscn" id="5_jlpde"]
 [ext_resource type="PackedScene" uid="uid://b7h6enp4r32i8" path="res://controlmenu.tscn" id="7_r8ld0"]
-[ext_resource type="Script" uid="uid://c7kfddq72uiav" path="res://Miranda/Scenes/hole.gd" id="8_kqyar"]
 [ext_resource type="Script" uid="uid://mcvo1263srd4" path="res://Miranda/Scenes/gamemanager.gd" id="9_mnqv5"]
 
 [sub_resource type="Environment" id="Environment_vbbo3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2ln5"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_eq7ty"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_eag67")
@@ -50,13 +47,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Area3D" type="Area3D" parent="."]
-script = ExtResource("8_kqyar")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 9.21778, -0.477269, 4.20928)
-shape = SubResource("CylinderShape3D_eq7ty")
 
 [node name="Gamemanager" type="Node" parent="."]
 script = ExtResource("9_mnqv5")

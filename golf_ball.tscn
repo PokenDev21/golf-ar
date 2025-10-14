@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://drvh8pgnnfhfu"]
+[gd_scene load_steps=3 format=3 uid="uid://hitp664f2o4d"]
 
 [ext_resource type="PackedScene" uid="uid://mwqqbfibqnhg" path="res://golf_assets/free_3d_golf_ball_model_with_pbr_texture.glb" id="2_0wkuo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_0wkuo"]
 radius = 0.518919
 
-[node name="GolfBall" type="RigidBody3D"]
+[node name="GolfBall2" type="RigidBody3D"]
 mass = 0.046
 linear_damp = 0.1
 angular_damp = 0.2

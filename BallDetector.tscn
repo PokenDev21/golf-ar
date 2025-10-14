@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://wadrnreq8vd5"]
+
+[ext_resource type="Script" uid="uid://c7kfddq72uiav" path="res://Miranda/Scenes/hole.gd" id="1_p62d8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_eq7ty"]
+height = 0.525
+radius = 0.19
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_p62d8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_eq7ty")
+debug_color = Color(0.921012, 0.000392169, 0.858959, 0.42)

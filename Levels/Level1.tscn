@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2720hqfr1574"]
+[gd_scene load_steps=3 format=3 uid="uid://b2720hqfr1574"]
 
 [ext_resource type="PackedScene" uid="uid://ceuv74c60bc86" path="res://Alex/GolfLevel1.glb" id="1_w77jt"]
+[ext_resource type="PackedScene" uid="uid://wadrnreq8vd5" path="res://BallDetector.tscn" id="2_3anf8"]
 
 [node name="GolfLevel1" instance=ExtResource("1_w77jt")]
 
 [node name="SpawnPoint" type="Marker3D" parent="." index="11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.17841, 0.499972, 0)
+
+[node name="Area3D" parent="." index="12" instance=ExtResource("2_3anf8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6279, 0.0578613, 4.36151)

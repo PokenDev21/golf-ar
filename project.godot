@@ -35,6 +35,10 @@ folder_colors={
 "res://addons/godot-xr-tools-master/": "pink"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 ResetLoc={
@@ -64,6 +68,8 @@ ResetLoc={
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 
 [xr]
