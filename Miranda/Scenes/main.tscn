@@ -7,6 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://c64811sx7rdom" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
 
 [sub_resource type="Environment" id="Environment_vbbo3"]
+=======
+[ext_resource type="Script" uid="uid://d241h0qatl771" path="res://Miranda/Scenes/main.gd" id="1_i0c5u"]
+[ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_vbbo3"]
+[ext_resource type="PackedScene" uid="uid://bfmvs20utnb7l" path="res://Alex/golf_ball.tscn" id="4_vbbo3"]
+[ext_resource type="PackedScene" uid="uid://bd45nfduxh08u" path="res://Alex/golfbanalvl1.tscn" id="5_dpujx"]
+[ext_resource type="PackedScene" path="res://David/scenes/CollisionTracker.tscn" id="5_i0c5u"]
+
+[sub_resource type="Environment" id="Environment_i0c5u"]
+>>>>>>> Stashed changes
 
 [sub_resource type="BoxMesh" id="BoxMesh_i0c5u"]
 
@@ -29,6 +38,7 @@ script = ExtResource("5_24x03")
 [node name="CollisionTracker" parent="." instance=ExtResource("5_i0c5u")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+<<<<<<< Updated upstream
 environment = SubResource("Environment_vbbo3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
