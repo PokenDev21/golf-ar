@@ -1,5 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckwn48fvg74lg"]
+[gd_scene load_steps=3 format=3 uid="uid://ckwn48fvg74lg"]
 
 [ext_resource type="PackedScene" uid="uid://c3c2jb3f6ndm" path="res://miranda_golfbana/rymdenbana 1 1.glb" id="1_lfj2m"]
+[ext_resource type="PackedScene" uid="uid://wadrnreq8vd5" path="res://BallDetector.tscn" id="2_wcc2u"]
 
 [node name="rymdenbana 1 1" instance=ExtResource("1_lfj2m")]
+
+[node name="SpawnPoint" type="Marker3D" parent="." index="21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0677114, 0.499972, 3.01874)
+
+[node name="Area3D" parent="." index="43" instance=ExtResource("2_wcc2u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.317644, -0.134274, -2.19708)

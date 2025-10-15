@@ -44,7 +44,7 @@ _subresources={
 },
 "PATH:Cylinder_002": {
 "generate/physics": true,
-"physics/shape_type": 3
+"physics/shape_type": 2
 },
 "PATH:Cylinder_003": {
 "generate/physics": true,
@@ -52,10 +52,11 @@ _subresources={
 },
 "PATH:Cylinder_004": {
 "generate/physics": true,
-"physics/shape_type": 3
+"physics/shape_type": 2
 },
 "PATH:Cylinder_005": {
-"physics/shape_type": 3
+"generate/physics": true,
+"physics/shape_type": 2
 },
 "PATH:Cylinder_009": {
 "generate/physics": true,
@@ -63,7 +64,7 @@ _subresources={
 },
 "PATH:Cylinder_010": {
 "generate/physics": true,
-"physics/shape_type": 3
+"physics/shape_type": 2
 },
 "PATH:Cylinder_011": {
 "generate/physics": true,
@@ -71,11 +72,15 @@ _subresources={
 },
 "PATH:Cylinder_012": {
 "generate/physics": true,
-"physics/shape_type": 3
+"physics/shape_type": 2
+},
+"PATH:Sphere": {
+"generate/physics": true,
+"physics/shape_type": 2
 },
 "PATH:Sphere_005": {
 "generate/physics": true,
-"physics/shape_type": 5
+"physics/shape_type": 2
 }
 }
 }

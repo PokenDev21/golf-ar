@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj3rjd7atwexs"]
+
+[ext_resource type="PackedScene" uid="uid://dwlrpwunrvief" path="res://David/Golfcourse.glb" id="1_rhq3p"]
+[ext_resource type="Material" uid="uid://vbix72hvlju2" path="res://David/PlaneWindow.tres" id="2_jon3f"]
+[ext_resource type="PackedScene" uid="uid://wadrnreq8vd5" path="res://BallDetector.tscn" id="2_xb24h"]
+
+[node name="Golfcourse" instance=ExtResource("1_rhq3p")]
+
+[node name="Plane_009" parent="Plane" index="71"]
+material_override = ExtResource("2_jon3f")
+
+[node name="Area3D" parent="." index="6" instance=ExtResource("2_xb24h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.59547, 0.193488, -4.39943)
+
+[node name="SpawnPoint" type="Marker3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04189, 0.864513, 6.2364)
