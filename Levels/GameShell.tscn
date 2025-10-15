@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b55lmse37f65v"]
+[gd_scene load_steps=11 format=3 uid="uid://b55lmse37f65v"]
 
 [ext_resource type="Script" uid="uid://d241h0qatl771" path="res://Miranda/Scenes/main.gd" id="1_eag67"]
 [ext_resource type="PackedScene" uid="uid://dfma26utxxd6w" path="res://David/scenes/Golfguy.tscn" id="2_x6oih"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dp5scwbh3jgiv" path="res://golfballresetpos.gd" id="4_hfnwn"]
 [ext_resource type="PackedScene" uid="uid://c64811sx7rdom" path="res://David/scenes/CollisionTracker.tscn" id="5_jlpde"]
 [ext_resource type="PackedScene" uid="uid://b7h6enp4r32i8" path="res://controlmenu.tscn" id="7_r8ld0"]
+[ext_resource type="AudioStream" uid="uid://vhvhx8gd8pg7" path="res://Hole in One.mp3" id="8_8kf8f"]
 [ext_resource type="Script" uid="uid://mcvo1263srd4" path="res://Miranda/Scenes/gamemanager.gd" id="9_mnqv5"]
 
 [sub_resource type="Environment" id="Environment_vbbo3"]
@@ -33,14 +34,16 @@ environment = SubResource("Environment_vbbo3")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="Scoremenu" parent="." instance=ExtResource("7_r8ld0")]
+offset_right = 0.0
+offset_bottom = 0.0
 
-[node name="Scorelabel" type="Label" parent="Scoremenu"]
+[node name="ScoreLabel" type="Label" parent="Scoremenu"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 label_settings = SubResource("LabelSettings_a2ln5")
 
-[node name="Panel" type="Panel" parent="Scoremenu/Scorelabel"]
+[node name="Panel" type="Panel" parent="Scoremenu/ScoreLabel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,3 +57,7 @@ script = ExtResource("9_mnqv5")
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43222, -0.0553564)
 target_position = Vector3(0, -0.09, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_8kf8f")
+autoplay = true

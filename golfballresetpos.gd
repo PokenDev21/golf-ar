@@ -13,12 +13,12 @@ const LINEAR_DAMP := 0.0
 const ANGULAR_DAMP := 0.0
 const BOUNCE := 0.7
 const FRICTION := 150
-const RAY_OFFSET: Vector3 = Vector3(0, 0.01, 0)
+const RAY_OFFSET: Vector3 = Vector3(0,0.01,0)
 
 @onready var raycast: RayCast3D = $"../RayCast3D"
 
 signal ball_hit(strokes: int)
-signal ball_in_hole(strokes: int, par: int)
+signal ball_in_hole(strokes: int, par: int, result: String)
 
 # ------------------------------------------------------------------------
 # Initialization
@@ -35,36 +35,27 @@ func _ready() -> void:
 	mat.friction = FRICTION
 	physics_material_override = mat
 
-	if debug_enabled:
-		print("[BALL] Ready. Par=", par)
-
 # ------------------------------------------------------------------------
-# Per-frame physics
+# Physics
 # ------------------------------------------------------------------------
 func _physics_process(delta: float) -> void:
-	# Auto-reset if ball falls below level
 	if not in_hole and global_transform.origin.y < reset_y_threshold:
-		if debug_enabled:
-			print("[BALL] Fell below threshold, resetting...")
 		reset_ball()
 
-	# Ground proximity dampening (simulate resting behavior)
 	if raycast:
 		raycast.global_position = global_transform.origin + RAY_OFFSET
 		raycast.global_rotation = Vector3.ZERO
 		gravity_scale = 0.01 if raycast.is_colliding() else 1.0
 
 # ------------------------------------------------------------------------
-# Gameplay logic
+# Gameplay
 # ------------------------------------------------------------------------
 func register_stroke() -> void:
 	if in_hole:
 		return
 	strokes += 1
-	if debug_enabled:
-		print("[BALL] Stroke registered. Total=", strokes)
 	emit_signal("ball_hit", strokes)
-	Game.add_stroke()  # update singleton stroke count
+	Game.add_stroke()
 
 func enter_hole(hole: Area3D) -> void:
 	if in_hole:
@@ -73,26 +64,41 @@ func enter_hole(hole: Area3D) -> void:
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	sleeping = true
-	if debug_enabled:
-		print("[BALL] Entered hole! Strokes=", strokes)
-	emit_signal("ball_in_hole", strokes, par)
-	Game.finish_level()
+
+	var result := _evaluate_score()
+	emit_signal("ball_in_hole", strokes, par, result)
+	print("[GolfBall] Hole completed:", result)
+
+	# Pass all data directly to Game for StrokeMenu
+	Game.finish_level(strokes, par, result)
 
 # ------------------------------------------------------------------------
-# Spawn + Reset Handling
+# Score evaluation
+# ------------------------------------------------------------------------
+func _evaluate_score() -> String:
+	var diff = strokes - par
+	if diff <= -2:
+		return "Eagle"
+	elif diff == -1:
+		return "Birdie"
+	elif diff == 0:
+		return "Par"
+	elif diff == 1:
+		return "Bogey"
+	elif diff == 2:
+		return "Double Bogey"
+	else:
+		return "Too Many"
+
+# ------------------------------------------------------------------------
+# Spawn / Reset
 # ------------------------------------------------------------------------
 func set_spawn_transform(xform: Transform3D) -> void:
 	spawn_transform = xform
-	if debug_enabled:
-		print("[BALL] Spawn transform set:", spawn_transform.origin)
 
 func reset_ball() -> void:
-	# Full reset — position, velocity, and state
 	if spawn_transform:
 		global_transform = spawn_transform
-	else:
-		push_warning("[BALL] No spawn transform set — cannot reset position!")
-
 	linear_velocity = Vector3.ZERO
 	angular_velocity = Vector3.ZERO
 	strokes = 0
@@ -100,6 +106,3 @@ func reset_ball() -> void:
 	sleeping = true
 	await get_tree().process_frame
 	sleeping = false
-
-	if debug_enabled:
-		print("[BALL] Ball reset to spawn point.")
